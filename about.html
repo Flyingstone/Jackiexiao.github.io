@@ -1,68 +1,34 @@
 ---
 layout: page
-title: "About"
-description: "Hey, this is Hux."
+title: "About Me"
+description: "Hey, this is Jackie."
 header-img: "img/about-bg.jpg"
 ---
-
-<!-- Language Selector -->
-<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select>
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
-    {{ about_zh | markdownify }}
+<div>
+    <blockquote>
+       	让我灰色的灵魂徒然渴望</br>
+		在人类思想的最远边界之外</br>
+		追求知识，像追求没落的星星</br>
+    </blockquote>
+	<p>
+	Hi，我是<strong>鉴津Jackie</strong>，程序员 &amp; 文艺青年，现就读于中山大学，属于<a href="https://www.aerobotsysu.cn">中大空中机器人团队</a>
+	常常蜗居在实验楼D302实验室。
+	</p>
+	<p>
+	参与的组织：
+	<ul>
+	<li><a href="https://aisec.org">AIESEC</a>: iGCDP Green-Power-Now前项目成员</li>
+	<li><a href="https://www.yes-go.cn">北辰青年</a>: YES_GO行动第二期小趴</li>
+	<li><a href="https://www.toastmasters.org">Toastmasters</a> 国际演讲俱乐部-广外俱乐部</li>
+	</ul>
+	</p>
+	<p>
+	网络社区：<a href="https://www.zhihu.com/people/jackiexiao">知乎-鉴津Jackie</a> <a href="http://www.jianshu.com/u/86fac8cd96fa">简书-鉴津Jackie</a>
+	</p>
+	<p>
+	最大的理想是实现通用人工智能。
+	</p>
 </div>
-
-<!-- English Version -->
-<div class="en post-container">
-    {% capture about_en %}{% include about/en.md %}{% endcapture %}
-    {{ about_en | markdownify }}
-</div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // get nodes
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    // bind hashchange event
-    window.addEventListener('hashchange', _render);
-
-    // handle render
-    function _render(){
-        var _hash = window.location.hash;
-        // en
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#zh"
-        }else{
-            window.location.hash = "#en"
-        }
-    }
-
-    // init
-    _render();
-</script>
-
 
 {% if site.disqus_username %}
 <!-- disqus 评论框 start -->
